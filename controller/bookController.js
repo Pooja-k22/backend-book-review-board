@@ -22,7 +22,7 @@ exports.bookAddController = async(req ,res)=>{
 exports.bookgetController = async(req ,res)=>{
 
     try {
-        const Book = await books.find()
+        const Book = await books.find().sort({ createdAt: -1 })
         res.status(200).json(Book)
         
     } catch (error) {
