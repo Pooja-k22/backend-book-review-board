@@ -21,7 +21,8 @@ This is the backend for the **Book Review Board** web app. Built with **Node.js*
 
 3. **Create a .env file in the root directory**
    ```sh
-   DATABASE=your_mongodb_url
+   DATABASE =your_mongodb_url
+   SECTETKEY = your secret key for jwt 
    ```
 
 4. **Start the development server**
