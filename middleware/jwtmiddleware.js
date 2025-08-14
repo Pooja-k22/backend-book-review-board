@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken')
 const jwtmiddleware =async(req,res,next)=>{
     const token = req.headers['authorization'].split(' ')[1]
     try {
-        const jwtRestonse = jwt.verify(token,"mysecretkey")
+        const jwtRestonse = jwt.verify(token,process.env.SECTETKEY)
         console.log(jwtRestonse);
         req.payload = jwtRestonse.userId
         next()
