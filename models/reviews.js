@@ -7,7 +7,7 @@ const reviewSchema = new mongoose.Schema({
     },
      bookId:{
         type:mongoose.Schema.Types.ObjectId,
-        ref:"users"
+        ref:"books"
     },
      rating:{
         type:Number,

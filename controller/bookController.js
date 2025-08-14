@@ -33,10 +33,10 @@ exports.bookgetController = async(req ,res)=>{
 
 // get a book
 exports.bookgetAController = async(req ,res)=>{
-    const bookId= req.params
+    const {id}= req.params
 
     try {
-        const Book = await books.findById(bookId).populate(userId)
+        const Book = await books.findById(id).populate("userId")
         res.status(200).json(Book)
         
     } catch (error) {

@@ -17,8 +17,10 @@ exports.reviewAddController = async (req, res) => {
 
 // get review
 exports.reviewgetController = async (req, res) => {
+  const {id}=req.params
+
   try {
-    const Review = await reviews.find();
+    const Review = await reviews.find({bookId:id}).populate("userId");
 
     res.status(200).json(Review);
   } catch (error) {

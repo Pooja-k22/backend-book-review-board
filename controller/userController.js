@@ -33,7 +33,7 @@ exports.loginController = async (req, res) => {
 
     if (existingUser) {
       if (existingUser.password == password) {
-        const token = jwt.sign({userId:existingUser._id},10)
+        const token = jwt.sign({userId:existingUser._id},"mysecretkey")
         res.status(200).json({existingUser,token});
       } else {
         res.status(409).json("inavid email or password");

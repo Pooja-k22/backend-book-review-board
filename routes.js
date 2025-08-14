@@ -26,13 +26,13 @@ route.post('/add-book',jwtmiddleware,bookController.bookAddController)
 // get book
 route.get('/get-book',bookController.bookgetController)
 // get A book
-route.get('/get-a-book/:id',bookController.bookgetAController)
+route.get('/book-detail/:id',bookController.bookgetAController)
 
 // review
 // add review
 route.post('/add-review',jwtmiddleware,reviewController.reviewAddController)
 // get review
-route.get('/add-review',reviewController.reviewgetController)
+route.get('/get-review/:id',reviewController.reviewgetController)
 
 
 module.exports = route
